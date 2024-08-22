@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
 
 // https://vitejs.dev/config/
-export default ({ mode }) => defineConfig({
+export default ({ mode }: {mode: string}) => defineConfig({
   plugins: [react()],
   base: '/',
   root: './src/app',
@@ -31,11 +31,6 @@ export default ({ mode }) => defineConfig({
       },
     },
     rollupOptions: {
-      output: {
-        manualChunks: {
-          antd: ['antd'],
-        },
-      },
     },
   },
 })
